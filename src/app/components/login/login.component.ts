@@ -14,17 +14,17 @@ export class LoginComponent {
   //   {id:3,name:"Priya",balance:40000.0}
   // ] 
   wallet:wallet={name:"",password:""};
- // constructor(private router:Router){}
+ constructor(private router:Router){}
   displayWalletInfoForm(){
     console.log("displayWalletInfoForm()");
     console.log(this.wallet);
   }
-//   submitLoginForm(){
-//     console.log("displayWalletInfoForm()");
-//     if(this.wallet.name=="Shruti"&& this.wallet.password=="shruti123")
-//     {
-// this.router.navigateByUrl("home");
-//     }
-//   }
+  submitLoginForm(){
+    console.log("displayWalletInfoForm()");
+    if(this.wallet.name=="Shruti"&& this.wallet.password=="shruti123")
+    {
+this.router.navigateByUrl("home");
+    }
+  }
   
 }

@@ -12,6 +12,7 @@ import { DemoComponent } from './components/demo/demo.component';
 import { HomeComponent } from './components/home/home.component';
 
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { DetailsComponent } from './components/details/details.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     DemoComponent,
     HomeComponent,
   
-    PageNotFoundComponent
+    PageNotFoundComponent,
+       DetailsComponent
   ],
   imports: [
     BrowserModule,
