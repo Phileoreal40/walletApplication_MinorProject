@@ -1,1 +1,49 @@
-<p>login works!</p>
+<div class="container">
+  <u>
+  <div style="text-align: center;">
+  <h1>Login Form<br><br></h1>
+</div>
+</u>
+ 
+    <form #userForm = "ngForm" >
+      <!-- <label for="id">Enter the WalletId:</label>
+      <br>
+      <input type = "number"[(ngModel)]="wallet.id" name="id" id="id"> -->
+    
+      
+    <div class="row">
+      <div class="col-25">
+      <label for="wname">Enter the Name:</label>
+      </div>
+      <div class="col-75">
+      <input type = "text"[(ngModel)]="wallet.name" #nameRef="ngModel" name="wname"  id="wname" pattern="[A-Za-z ]{3,}" title="Only chars are allowed , Min 3 chars required" required >
+      <div *ngIf="nameRef.invalid && (nameRef.touched || nameRef.dirty )">
+        <p *ngIf = "nameRef.errors?.['required']" class="text-danger">Name is required, can't be blank.</p>
+        <p *ngIf = "nameRef.errors?.['pattern']" class="text-danger">Name must have at least 3 chars ,only chars are allowed.</p>
+      </div>
+      </div>
+      </div>
+   
+      <div class="row">
+
+        <div class="col-25">
+      <label for="wpassword">Enter the Password:</label>
+    </div>
+    <div class="col-75">
+      <input type = "password"[(ngModel)]="wallet.password" #passwordRef="ngModel" name="wpassword" id="wpassword" pattern="[a-zA-Z0-9]{8,}" required>
+      <div *ngIf="passwordRef.invalid && (passwordRef.touched || passwordRef.dirty )">
+        <p *ngIf = "passwordRef.errors?.['required']" class="text-danger">Password is required, can't be blank.</p>
+        <p *ngIf = "passwordRef.errors?.['pattern']" class="text-danger">Password must be at least 8 chars.</p>
+      </div>
+      </div>
+      </div>
+ 
+      <div class="row" >
+        <br>
+        <br>
+       
+      <input type="submit"(click)="displayWalletInfoForm()" [disabled]="!userForm.valid" value="Submit" >
+      <!-- <input type="submit"(click)="submitLoginForm()" [disabled]="!userForm.valid" value="Submit" > -->
+      </div>
+    </form>
+  </div>
