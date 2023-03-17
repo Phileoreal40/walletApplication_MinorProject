@@ -1,0 +1,93 @@
+<h1>Data binding</h1>
+<h2>One way data binding</h2>
+<h3>Interpollation</h3>
+<p>{{title}}</p>
+<p>{{date}}</p>
+<h3>Property binding</h3>
+<img [src]="imageSrc">
+<h3>Event Binding</h3>
+<button (click) = "greetUser()">Greetings</button>
+<h3>Two way data binding</h3>
+<h3>form</h3>
+<form>
+  User Name:
+<input type = "text" [(ngModel)]= "name" name = "firstName">
+<br>
+User Password:
+<input type = "password" [(ngModel)]= "password" name = "password">
+<br>
+<input type ="button"(click) ="displayName()" value="Login">
+</form>
+<p>Name:{{name}}:Password{{password}}</p>
+<h1>Structural Directives</h1>
+<h3>*ngIf</h3>
+<div *ngIf = "a>b">
+  <p>My para</p>
+</div>
+<div *ngIf = "b>a">
+  <p>My para 1</p>
+</div>
+<ul [ngSwitch]="stringChoice">
+<li *ngSwitchCase="' A ' ">Para 1</li>
+<li *ngSwitchCase="' B ' ">Para 2</li>
+<li *ngSwitchCase="' C ' ">Para 3</li>
+<li *ngSwitchDefault>Default para</li>
+
+
+
+</ul>
+
+<h3> *ngFor </h3>
+<ol>
+  <li *ngFor = "let name of countryNames">
+
+    {{name}}
+  </li>
+
+</ol>
+<div>
+  <h1>Wallet Details.</h1>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Balance</th>
+    </tr>
+    <tr *ngFor="let information of walletInfo ">
+      <td>{{information.id}}</td>
+      <td>{{information.name}}</td>
+      <td>{{information.balance}}</td>
+      
+
+
+    </tr>
+  </table>
+
+</div>
+<div>
+  <h1>Wallet Form</h1>
+  <form #userForm = "ngForm">
+    <label for="id">Enter the WalletId:</label>
+    <br>
+    <input type = "number"[(ngModel)]="wallet.id" name="id" id="id">
+    <br>
+    <label for="wname">Enter the Name:</label>
+    <br>
+    <input type = "text"[(ngModel)]="wallet.name" #nameRef="ngModel" name="wname"  id="wname" pattern="[A-Za-z ]{3,}" title="Only chars are allowed , Min 3 chars required" required >
+    <div *ngIf="nameRef.invalid && (nameRef.touched || nameRef.dirty )">
+      <p *ngIf = "nameRef.errors?.['required']" class="text-danger">Name is required, can't be blank.</p>
+      <p *ngIf = "nameRef.errors?.['pattern']" class="text-danger">Name must have at least 3 chars ,only chars are allowed.</p>
+    </div>
+    <br>
+    <label for="wbalance">Enter the Balance:</label>
+    <br>
+    <input type = "number"[(ngModel)]="wallet.balance" #salaryRef="ngModel" name="wbalance" id="wbalance" min=0 required>
+    <div *ngIf="salaryRef.invalid && (salaryRef.touched || salaryRef.dirty )">
+      <p *ngIf = "salaryRef.errors?.['required']" class="text-danger">Salary is required, can't be blank.</p>
+      <p *ngIf = "salaryRef.errors?.['pattern']" class="text-danger">Salary must be > 0.</p>
+    </div>
+    <br><br>
+    <input type="button"(click)="displayWalletInfoForm()" [disabled]="!userForm.valid" value="Submit" >
+
+  </form>
+</div>
