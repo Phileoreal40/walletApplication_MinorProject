@@ -1,6 +1,5 @@
-export interface wallet{
-    id?: number;
-    name?: string;
-   balance?: number;
-   password?: String;
+export class wallet{
+ 
+
+   constructor ( public id?: number, public name?: string,public balance?: number,public  password?: String){}
 }

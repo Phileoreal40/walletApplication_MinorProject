@@ -13,7 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { DetailsComponent } from './components/details/details.component';
-
+import { DisplayAllWalletComponent } from './components/display-all-wallet/display-all-wallet.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +24,9 @@ import { DetailsComponent } from './components/details/details.component';
     HomeComponent,
   
     PageNotFoundComponent,
-       DetailsComponent
+       DetailsComponent,
+       DisplayAllWalletComponent
+    
   ],
   imports: [
     BrowserModule,

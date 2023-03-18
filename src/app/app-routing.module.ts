@@ -7,6 +7,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { DemoComponent } from './components/demo/demo.component';
 import { DetailsComponent } from './components/details/details.component';
+import { DisplayAllWalletComponent } from './components/display-all-wallet/display-all-wallet.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'/home',pathMatch:"full"},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'registration',component:RegistrationComponent},
    {path:'details',component:DetailsComponent},
+   {path:'walletDisplay',component:DisplayAllWalletComponent},
   {path:'**',component:PageNotFoundComponent}
   
 ];

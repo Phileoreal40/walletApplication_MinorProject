@@ -1,0 +1,26 @@
+
+
+    <div style="text-align:center">    <h1>Display all Wallets</h1>
+     <br>
+     <br>   
+    </div>
+    <div class="container" >
+    <table 
+    border="3"
+     class ='table' >
+     <thead style="background-color:blue;">
+        <tr>
+            <th> Id </th>
+            <th>Name</th>
+            <th>Balance</th>
+        </tr>
+    </thead>
+    <tbody style = "background-color:rgb(153, 204, 236)">
+     <tr *ngFor="let wal of walletdata">
+        <td>{{wal.id}}</td>
+        <td>{{wal.name}}</td>
+        <td>{{wal.balance}}</td>
+     </tr>
+    </tbody>
+    </table>
+</div>
