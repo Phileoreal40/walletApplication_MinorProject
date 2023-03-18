@@ -14,6 +14,11 @@ import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { DetailsComponent } from './components/details/details.component';
 import { DisplayAllWalletComponent } from './components/display-all-wallet/display-all-wallet.component';
+import { SearchPipe } from './pipes/search.pipe';
+import { WalletService } from './service/wallet.service';
+import { UpperPipe } from './pipes/upper.pipe';
+import { SortPipe } from './pipes/sort.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +30,11 @@ import { DisplayAllWalletComponent } from './components/display-all-wallet/displ
   
     PageNotFoundComponent,
        DetailsComponent,
-       DisplayAllWalletComponent
+       DisplayAllWalletComponent,
+       SearchPipe,
+       UpperPipe,
+       SortPipe,
+     
     
   ],
   imports: [
@@ -35,7 +44,7 @@ import { DisplayAllWalletComponent } from './components/display-all-wallet/displ
     CommonModule,
     
   ],
-  providers: [],
+  providers: [WalletService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
