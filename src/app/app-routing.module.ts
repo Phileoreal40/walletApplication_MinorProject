@@ -12,8 +12,8 @@ import { DisplayAllWalletComponent } from './components/display-all-wallet/displ
 const routes: Routes = [
   {path:'', redirectTo:'/home',pathMatch:"full"},
   {path:'home',component:HomeComponent},
-  {path:'demo',component:DemoComponent},
-  {path:'login',component:LoginComponent},
+   {path:'demo',component:DemoComponent},
+   {path:'login',component:LoginComponent},
   {path:'registration',component:RegistrationComponent},
    {path:'details',component:DetailsComponent},
    {path:'walletDisplay',component:DisplayAllWalletComponent},
