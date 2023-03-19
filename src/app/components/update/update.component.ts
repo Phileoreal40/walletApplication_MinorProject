@@ -38,7 +38,9 @@ export class UpdateComponent {
     console.log("Update wall:");
     console.log(this.wallet);
     this.WalletService.updateWallet(this.wallet).subscribe(
+      
       {
+        
         next:(data)=>{
           this.msg= "Wallet updated successfully";
           this.errorMsg= "";
@@ -53,5 +55,6 @@ export class UpdateComponent {
       }
     )
   }
+
 
 }

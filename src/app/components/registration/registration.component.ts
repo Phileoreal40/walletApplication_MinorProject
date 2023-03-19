@@ -10,12 +10,12 @@ import { WalletService } from 'src/app/service/wallet.service';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent {
-wallet:wallet=new wallet();
+  walletdata:wallet=new wallet();
 constructor(private walletService:WalletService,private walletBackEndService:WalletBackendService ){}
 onSubmit(){
-console.log(this.wallet);
-this.walletService.addWallet(this.wallet);
-let walletPost: Observable<any> =this.walletBackEndService.addWallet(this.wallet);
+console.log(this.walletdata);
+this.walletService.addWallet(this.walletdata);
+let walletPost: Observable<any> =this.walletBackEndService.addWallet(this.walletdata);
 walletPost.subscribe(
   {
     next:(data)=>{ // executes when back end reposnds with success status code

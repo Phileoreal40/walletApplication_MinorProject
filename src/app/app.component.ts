@@ -8,5 +8,6 @@ import { wallet } from './model/Wallet';
 })
 export class AppComponent implements OnInit {
  ngOnInit(): void {
-     throw new Error('Method not implementes.');}
+    // throw new Error('Method not implementes.');}
  }
+}

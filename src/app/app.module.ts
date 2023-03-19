@@ -16,8 +16,10 @@ import { DetailsComponent } from './components/details/details.component';
 import { DisplayAllWalletComponent } from './components/display-all-wallet/display-all-wallet.component';
 import { SearchPipe } from './pipes/search.pipe';
 import { WalletService } from './service/wallet.service';
+
 import { UpperPipe } from './pipes/upper.pipe';
 import { SortPipe } from './pipes/sort.pipe';
+import {HttpClientModule} from '@angular/common/http';
 import { UpdateComponent } from './components/update/update.component';
 
 @NgModule({
@@ -36,6 +38,7 @@ import { UpdateComponent } from './components/update/update.component';
        UpperPipe,
        SortPipe,
        UpdateComponent,
+       
      
     
   ],
@@ -44,6 +47,7 @@ import { UpdateComponent } from './components/update/update.component';
     AppRoutingModule,
     FormsModule ,
     CommonModule,
+    HttpClientModule
     
   ],
   providers: [WalletService],

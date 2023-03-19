@@ -20,8 +20,8 @@ export class WalletBackendService {
   deleteWalletById(id?:number):Observable<any>{
     return this.httpClient.delete("http://localhost:9090/v1/wallet/"+id);
   }
-  updateWallet(Wallet:wallet):Observable<any>{
-    return this.httpClient.put("http://localhost:9090/v1/wallet",Wallet);
+  updateWallet(walletdata:wallet):Observable<any>{
+    return this.httpClient.put("http://localhost:9090/v1/wallet",walletdata);
   }
   getAllWallet():Observable<any>{
     return this.httpClient.get("http://localhost:9090/v1/wallet");

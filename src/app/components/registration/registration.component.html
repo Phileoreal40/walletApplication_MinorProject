@@ -17,7 +17,7 @@
             <label for="wid">Enter the ID:</label>
             </div>
             <div class="col-75">
-            <input type = "number"[(ngModel)]="wallet.id" #idRef="ngModel" name="wid"  id="wid" min=0 title="Enter positive Id" required >
+            <input type = "number"[(ngModel)]="walletdata.id" #idRef="ngModel" name="wid"  id="wid" min=0 title="Enter positive Id" required >
             <div *ngIf="idRef.invalid && (idRef.touched || idRef.dirty )">
               <p *ngIf = "idRef.errors?.['required']" class="text-danger">Id is required, can't be blank.</p>
               <p *ngIf = "idRef.errors?.['min']" class="text-danger">Id must be positive.</p>
@@ -29,7 +29,7 @@
         <label for="wname">Enter the Name:</label>
         </div>
         <div class="col-75">
-        <input type = "text"[(ngModel)]="wallet.name" #nameRef="ngModel" name="wname"  id="wname" pattern="[A-Za-z ]{3,}" title="Only chars are allowed , Min 3 chars required" required >
+        <input type = "text"[(ngModel)]="walletdata.name" #nameRef="ngModel" name="wname"  id="wname" pattern="[A-Za-z ]{3,}" title="Only chars are allowed , Min 3 chars required" required >
         <div *ngIf="nameRef.invalid && (nameRef.touched || nameRef.dirty )">
           <p *ngIf = "nameRef.errors?.['required']" class="text-danger">Name is required, can't be blank.</p>
           <p *ngIf = "nameRef.errors?.['pattern']" class="text-danger">Name must have at least 3 chars ,only chars are allowed.</p>
@@ -43,7 +43,7 @@
         <label for="wbalance">Enter the Balance:</label>
       </div>
       <div class="col-75">
-        <input type = "text"[(ngModel)]="wallet.balance" #balanceRef="ngModel" name="wbalance" id="wbalance" min=0 required>
+        <input type = "text"[(ngModel)]="walletdata.balance" #balanceRef="ngModel" name="wbalance" id="wbalance" min=0 required>
         <div *ngIf="balanceRef.invalid && (balanceRef.touched || balanceRef.dirty )">
           <p *ngIf = "balanceRef.errors?.['required']" class="text-danger">Balance is required, can't be blank.</p>
           <p *ngIf = "balanceRef.errors?.['min']" class="text-danger">Balance must be positive.</p>

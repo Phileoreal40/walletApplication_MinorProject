@@ -13,6 +13,7 @@
             <th> Id </th>
             <th>Name</th>
             <th>Balance</th>
+            <th>Buttons</th>
         </tr>
     </thead>
     <tbody style = "background-color:rgb(153, 204, 236)">
@@ -20,7 +21,19 @@
         <td>{{wal.id}}</td>
         <td>{{wal.name}}</td>
         <td>{{wal.balance}}</td>
+        <td>
+            <input type="button" class="btn btn-info" (click)="updateWallet(wal)" value="Update">
+        
+            <input type="button" class="btn btn-danger" (click)="deleteWallet(wal.id)" value="Delete">
+        
+        </td>
      </tr>
     </tbody>
     </table>
+    <div *ngIf="msg" class="alert alert-success" >
+        <p class="">{{msg}}</p>
+    </div>
+    <div *ngIf="errorMsg" class="alert alert-danger">
+        <p>{{errorMsg}}</p> 
+    </div>
 </div>
