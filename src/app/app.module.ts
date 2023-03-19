@@ -18,6 +18,7 @@ import { SearchPipe } from './pipes/search.pipe';
 import { WalletService } from './service/wallet.service';
 import { UpperPipe } from './pipes/upper.pipe';
 import { SortPipe } from './pipes/sort.pipe';
+import { UpdateComponent } from './components/update/update.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { SortPipe } from './pipes/sort.pipe';
        SearchPipe,
        UpperPipe,
        SortPipe,
+       UpdateComponent,
      
     
   ],
