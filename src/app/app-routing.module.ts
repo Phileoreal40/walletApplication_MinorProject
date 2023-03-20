@@ -23,9 +23,9 @@ const routes: Routes = [
    {path:'walletDisplay',component:DisplayAllWalletComponent},
   {path:'**',component:PageNotFoundComponent},
   {path:'update',component:UpdateComponent},
-  {path:'withdraw',component:WithdrawFundsComponent},
-  {path:'tranfer',component:TranferFundsComponent},
-  {path:'fund',component:FundsComponent}
+  {path:'withdrawFunds',component:WithdrawFundsComponent},
+  {path:'tranferFunds',component:TranferFundsComponent},
+  {path:'funds',component:FundsComponent}
 
   
 ];
