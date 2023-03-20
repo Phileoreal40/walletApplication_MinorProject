@@ -20,7 +20,7 @@ import { WalletService } from './service/wallet.service';
 import { UpperPipe } from './pipes/upper.pipe';
 import { SortPipe } from './pipes/sort.pipe';
 import {HttpClientModule} from '@angular/common/http';
-import { UpdateComponent } from './components/update/update.component';
+
 import { WithdrawFundsComponent } from './components/withdraw-funds/withdraw-funds.component';
 import { TranferFundsComponent } from './components/tranfer-funds/tranfer-funds.component';
 import { FundsComponent } from './components/funds/funds.component';
@@ -40,7 +40,7 @@ import { FundsComponent } from './components/funds/funds.component';
        SearchPipe,
        UpperPipe,
        SortPipe,
-       UpdateComponent,
+
        WithdrawFundsComponent,
        TranferFundsComponent,
        FundsComponent,

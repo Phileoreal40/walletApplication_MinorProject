@@ -66,23 +66,18 @@ deleteWallet(id?: number): void{
 )}
 
 
-updateWallet(wal: wallet) {
-  console.log("Update wallet"+ wal);
-
-  this.router.navigate(['update', wal.id]);
-}
 addFunds(){
-  this.router.navigate(['fund']);
+  this.router.navigate(['funds']);
 
 }
 
 withdrawFunds(){
-  this.router.navigate(['withdraw']);
+  this.router.navigate(['withdrawFunds']);
 
 }
 
 tranferFunds(){
-  this.router.navigate(['tranfer']);
+  this.router.navigate(['tranferFunds']);
 
 }
 
