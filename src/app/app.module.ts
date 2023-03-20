@@ -21,6 +21,9 @@ import { UpperPipe } from './pipes/upper.pipe';
 import { SortPipe } from './pipes/sort.pipe';
 import {HttpClientModule} from '@angular/common/http';
 import { UpdateComponent } from './components/update/update.component';
+import { WithdrawFundsComponent } from './components/withdraw-funds/withdraw-funds.component';
+import { TranferFundsComponent } from './components/tranfer-funds/tranfer-funds.component';
+import { FundsComponent } from './components/funds/funds.component';
 
 @NgModule({
   declarations: [
@@ -30,14 +33,18 @@ import { UpdateComponent } from './components/update/update.component';
 
     DemoComponent,
     HomeComponent,
-  
+    DetailsComponent,
     PageNotFoundComponent,
-       DetailsComponent,
+      
        DisplayAllWalletComponent,
        SearchPipe,
        UpperPipe,
        SortPipe,
        UpdateComponent,
+       WithdrawFundsComponent,
+       TranferFundsComponent,
+       FundsComponent,
+    
        
      
     
@@ -50,7 +57,7 @@ import { UpdateComponent } from './components/update/update.component';
     HttpClientModule
     
   ],
-  providers: [WalletService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

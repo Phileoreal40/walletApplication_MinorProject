@@ -9,10 +9,10 @@ import { WalletBackendService } from 'src/app/service/wallet-backend.service';
   styleUrls: ['./update.component.css']
 })
 export class UpdateComponent {
-  msg: string = "";
-  errorMsg: string = "";
+  msg?: string;
+  errorMsg?: string ;
   id: string | null = "";
-  wallet:wallet=new wallet();
+  walletdata:wallet=new wallet();
 
   constructor(private router:Router,private activatedRoute: ActivatedRoute, private WalletService: WalletBackendService) { }
   ngOnInit(): void {
@@ -21,13 +21,18 @@ export class UpdateComponent {
     this.WalletService.getWalletById(this.id).subscribe(
       {
         next: (data) => {
-          this.wallet = data;
+          this.walletdata = data;
           console.log(data);
 
         },
-        error: (error) => {
+        error: (_error) => {
           console.log(Error);
 
+        },
+        complete:() =>{
+          // this.msg = "Wallet Updated Successfully";
+          // this.errormsg = "";
+          console.log("Request Completed...");
         }
       }
 
@@ -35,13 +40,13 @@ export class UpdateComponent {
 
   }
   updateWallet(){
-    console.log("Update wall:");
-    console.log(this.wallet);
-    this.WalletService.updateWallet(this.wallet).subscribe(
+    console.log("Update wal:");
+    console.log(this.walletdata);
+    this.WalletService.updateWallet(this.walletdata).subscribe(
       
       {
         
-        next:(data)=>{
+        next:(_data)=>{
           this.msg= "Wallet updated successfully";
           this.errorMsg= "";
           this.router.navigateByUrl("wallets");
@@ -51,6 +56,11 @@ export class UpdateComponent {
           this.msg= "";
           this.errorMsg= JSON.stringify(err.error);//"Wallet could not be updated successfully";
 
+        },
+        complete:() =>{
+          this.msg = "Wallet Updated Successfully";
+          this.errorMsg = "";
+          console.log("Request Completed...");
         }
       }
     )

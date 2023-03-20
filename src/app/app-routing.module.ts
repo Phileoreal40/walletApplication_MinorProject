@@ -9,6 +9,9 @@ import { DemoComponent } from './components/demo/demo.component';
 import { DetailsComponent } from './components/details/details.component';
 import { DisplayAllWalletComponent } from './components/display-all-wallet/display-all-wallet.component';
 import { UpdateComponent } from './components/update/update.component';
+import { WithdrawFundsComponent } from './components/withdraw-funds/withdraw-funds.component';
+import { TranferFundsComponent } from './components/tranfer-funds/tranfer-funds.component';
+import { FundsComponent } from './components/funds/funds.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'/home',pathMatch:"full"},
@@ -16,10 +19,13 @@ const routes: Routes = [
    {path:'demo',component:DemoComponent},
    {path:'login',component:LoginComponent},
   {path:'registration',component:RegistrationComponent},
-   {path:'details/:name',component:DetailsComponent},
+   {path:'details',component:DetailsComponent},
    {path:'walletDisplay',component:DisplayAllWalletComponent},
   {path:'**',component:PageNotFoundComponent},
-  {path:'update/:id',component:UpdateComponent}
+  {path:'update',component:UpdateComponent},
+  {path:'withdraw',component:WithdrawFundsComponent},
+  {path:'tranfer',component:TranferFundsComponent},
+  {path:'fund',component:FundsComponent}
 
   
 ];

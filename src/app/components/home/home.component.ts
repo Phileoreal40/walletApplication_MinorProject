@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { wallet } from 'src/app/model/Wallet';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  
+  walletdata:wallet = new wallet();
   title = 'Wallet Application';
    name="";
    constructor(private router:Router){ }
@@ -15,4 +18,6 @@ export class HomeComponent {
     this.router.navigate(['details',{name:this.name}]);
    }
   imageSrc :String= "assets/wallet.jpg";
+  
+  
 }

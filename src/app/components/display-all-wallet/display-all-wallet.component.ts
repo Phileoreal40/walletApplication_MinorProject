@@ -18,7 +18,7 @@ export class DisplayAllWalletComponent implements OnInit{
   constructor(private router:Router,private walletService:WalletService,private walletBackEndService:WalletBackendService ){ }
   ngOnInit(): void {
  //  this.walletdata = this.walletService. getAllWallets();
- this.walletBackEndService.getAllWallet().subscribe({
+ this.walletBackEndService.getAllWallets().subscribe({
 next: (data) => {
   console.log(data);
   this.walletdata = data;
@@ -71,6 +71,20 @@ updateWallet(wal: wallet) {
 
   this.router.navigate(['update', wal.id]);
 }
-query:string = "";
+addFunds(){
+  this.router.navigate(['fund']);
+
+}
+
+withdrawFunds(){
+  this.router.navigate(['withdraw']);
+
+}
+
+tranferFunds(){
+  this.router.navigate(['tranfer']);
+
+}
+
   }
 

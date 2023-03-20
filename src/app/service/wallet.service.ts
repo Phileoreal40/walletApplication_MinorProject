@@ -25,6 +25,13 @@ walletdata:wallet[]=[];
     this.walletdata.push(newWallet);
   }
 
+  updateWallet():void{
+    console.log("Wallet Updated");
+  }
+
+  addFunds():void{
+    console.log("Funds Tranfered");
+  }
 
 
 }

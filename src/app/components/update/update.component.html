@@ -1,11 +1,20 @@
-<p>update works!</p>
+<div style="text-align: center;">
+
+<h1>Update Data</h1>
+<br>
+<br>
+
+</div>
 <form>
     Id:
-    <input type="text" [(ngModel)]="wallet.id" name="id" id = "id" disabled>
+    <input type="text" [(ngModel)]="walletdata.id" name="id" id = "id" disabled>
+    <br>
     Name:
-    <input type="text" [(ngModel)]="wallet.name" name="name" id = "name" >
-    Salary:
-    <input type="number" [(ngModel)]="wallet.balance" name="balance" id = "balance" > 
+    <input type="text" [(ngModel)]="walletdata.name" name="name" id = "name" >
+    <br>
+    Balance:
+    <input type="number" [(ngModel)]="walletdata.balance" name="balance" id = "balance" > 
+    <br>
     <input type="button" (click)="updateWallet()" value="Update">
 
     <div *ngIf="msg" class="alert alert-success" >
