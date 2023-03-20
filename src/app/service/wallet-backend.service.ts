@@ -14,7 +14,7 @@ export class WalletBackendService {
     return this.httpClient.get("http://localhost:9090/v1/wallet/"+id);
   }
   addWallet(newWallet:wallet):Observable<any>{
-    let url:string = "http://localhost:9090/v1/wallet/";
+    let url:string = "http://localhost:9090/v1/wallet/wallet";
     return this.httpClient.post(url,newWallet,{responseType:'json'});
   }
   updateWallet(walletdata:wallet):Observable<any>{
@@ -33,7 +33,7 @@ export class WalletBackendService {
   }
   
   withdrawFunds(id?:number,balance?:number):Observable<any>{
-    return this.httpClient.patch("http://localhost:9090/v1/wallet/withdrawFund/"+id+"?balance="+balance,wallet)
+    return this.httpClient.patch("http://localhost:9090/v1/wallet/withdrawFunds/"+id+"?balance="+balance,wallet)
   }
   tranferFunds(fromId?:number,toId?:number, balance?:number):Observable<any>{
     return this.httpClient.patch("http://localhost:9090/v1/wallet/tranferFunds/{fromId}/{toId}?fromId="+fromId+"&toId="+toId+"&amount="+balance,wallet);

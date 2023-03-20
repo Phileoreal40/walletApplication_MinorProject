@@ -8,7 +8,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { DemoComponent } from './components/demo/demo.component';
 import { DetailsComponent } from './components/details/details.component';
 import { DisplayAllWalletComponent } from './components/display-all-wallet/display-all-wallet.component';
-import { UpdateComponent } from './components/update/update.component';
+
 import { WithdrawFundsComponent } from './components/withdraw-funds/withdraw-funds.component';
 import { TranferFundsComponent } from './components/tranfer-funds/tranfer-funds.component';
 import { FundsComponent } from './components/funds/funds.component';
@@ -22,7 +22,7 @@ const routes: Routes = [
    {path:'details',component:DetailsComponent},
    {path:'walletDisplay',component:DisplayAllWalletComponent},
   {path:'**',component:PageNotFoundComponent},
-  {path:'update',component:UpdateComponent},
+
   {path:'withdrawFunds',component:WithdrawFundsComponent},
   {path:'tranferFunds',component:TranferFundsComponent},
   {path:'funds',component:FundsComponent}
