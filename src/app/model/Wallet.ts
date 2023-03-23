@@ -1,7 +1,7 @@
 export class wallet{
  
 
-   constructor ( public id?: number, public name?: string,public balance?: number,public  password?: String){}
+   constructor ( public id?: number, public name?: string,public balance?: number,public email?:string,public  password?: String){}
 }
 // JSOn needed in Spring boot
 // {

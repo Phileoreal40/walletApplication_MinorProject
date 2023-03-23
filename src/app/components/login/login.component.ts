@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { wallet } from 'src/app/model/Wallet';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -13,18 +14,33 @@ export class LoginComponent {
   //   {id:2,name:"Aman",balance:32000.0},
   //   {id:3,name:"Priya",balance:40000.0}
   // ] 
-  wallet:wallet={name:"",password:""};
- constructor(private router:Router){}
+  walletdata:wallet={name:"",password:""};
+ constructor(private router:Router,private authService: AuthService){}
   displayWalletInfoForm(){
     console.log("displayWalletInfoForm()");
-    console.log(this.wallet);
+    console.log(this.walletdata);
   }
   submitLoginForm(){
-    console.log("displayWalletInfoForm()");
-    if(this.wallet.name=="Shruti"&& this.wallet.password=="shruti123")
-    {
-this.router.navigateByUrl("home");
+//    
+console.log(this.walletdata);
+
+this.authService.userLogin(this.walletdata).subscribe(
+  {
+    next:(data)=>{
+      console.log(data);
+      sessionStorage.setItem("user",JSON.stringify(data));
+      console.log(data.jwt);
+      sessionStorage.setItem("jwt",data.jwt);
+      sessionStorage.setItem("role",data.role);
+      
+      //localStorage
+      this.router.navigateByUrl("home");
+    },
+    error:(err)=>{
+      console.log(err);
     }
+  }
+);
   }
   
 }

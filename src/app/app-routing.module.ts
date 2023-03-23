@@ -13,6 +13,8 @@ import { WithdrawFundsComponent } from './components/withdraw-funds/withdraw-fun
 import { TranferFundsComponent } from './components/tranfer-funds/tranfer-funds.component';
 import { FundsComponent } from './components/funds/funds.component';
 import { UpdateComponent } from './components/update/update.component';
+import { GuardService } from './service/guard.service';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'/home',pathMatch:"full"},
@@ -27,6 +29,7 @@ const routes: Routes = [
   {path:'withdrawFunds',component:WithdrawFundsComponent},
   {path:'tranferFunds',component:TranferFundsComponent},
   {path:'funds',component:FundsComponent},
+  { path: 'profile', component: ProfileComponent,canActivate:[GuardService] },
 
   {path:'**',component:PageNotFoundComponent},
 

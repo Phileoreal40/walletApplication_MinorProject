@@ -25,6 +25,7 @@ import { WithdrawFundsComponent } from './components/withdraw-funds/withdraw-fun
 import { TranferFundsComponent } from './components/tranfer-funds/tranfer-funds.component';
 import { FundsComponent } from './components/funds/funds.component';
 import { UpdateComponent } from './components/update/update.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { UpdateComponent } from './components/update/update.component';
        TranferFundsComponent,
        FundsComponent,
        UpdateComponent,
+       ProfileComponent,
     
        
      
@@ -59,7 +61,7 @@ import { UpdateComponent } from './components/update/update.component';
     HttpClientModule
     
   ],
-  providers: [],
+  providers: [WalletService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
