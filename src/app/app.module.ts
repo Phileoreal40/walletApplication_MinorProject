@@ -24,6 +24,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { WithdrawFundsComponent } from './components/withdraw-funds/withdraw-funds.component';
 import { TranferFundsComponent } from './components/tranfer-funds/tranfer-funds.component';
 import { FundsComponent } from './components/funds/funds.component';
+import { UpdateComponent } from './components/update/update.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { FundsComponent } from './components/funds/funds.component';
        WithdrawFundsComponent,
        TranferFundsComponent,
        FundsComponent,
+       UpdateComponent,
     
        
      

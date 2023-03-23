@@ -65,6 +65,12 @@ deleteWallet(id?: number): void{
     }
 )}
 
+updateWallet(wal:wallet){
+  console.log("update Wallet" + wal);
+  this.router.navigate(['update', wal.id]);
+
+}
+
 
 addFunds(){
   this.router.navigate(['funds']);
